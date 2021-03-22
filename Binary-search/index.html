@@ -13,7 +13,7 @@
         let high = arr.length - 1;
 
         while (low <= high) {
-          let mid = (low + high) / 2;
+          let mid = Math.ceil((low + high) / 2);
           let guess = arr[mid];
           if (guess == item) {
             return mid;
@@ -23,9 +23,9 @@
             low = mid + 1;
           }
         }
-        return mid;
+        return null;
       }
-      console.log("reslsd", binarySearch([1, 3, 5, 7, 9], 3));
+      console.log("res", binarySearch([1, 3, 5, 7, 9], 7));
     </script>
   </body>
 </html>
