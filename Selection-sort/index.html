@@ -8,26 +8,30 @@
   </head>
   <body>
     <script>
-      function findSmallest(arr) {
-        let smallest = arr[0];
-        let smallest_index = 0;
+      const selectionSort = (arr) => {
+        let len = arr.length;
 
-        for (let i = 1; i <= arr.length; i++) {
-          if (arr[i] < smallest) {
-            smallest = arr[i];
-            smallest_index = i;
+        for (let i = 0; i < len; i++) {
+          let min = i;
+
+          for (let j = i + 1; j < len; j++) {
+            if (arr[min] > arr[j]) {
+              min = j;
+            }
+          }
+
+          //swap
+          if (i !== min) {
+            let temp = arr[i];
+            arr[i] = arr[min];
+            arr[min] = temp;
           }
         }
-        return smallest_index;
-      }
 
-      function selectionSort(arr) {
-        newArr = [];
-        for (let i = 0; arr.length; i++) {
-          let smallest = findSmallest(arr);
-          //remove smallest from array and put it to newArr
-        }
-      }
+        return console.log(arr);
+      };
+
+      selectionSort([8, 8, 7, 1, 4, 0, -4]);
     </script>
   </body>
 </html>
